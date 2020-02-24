@@ -17,6 +17,10 @@ public class Article implements Serializable
      */
     private Integer aArticleId;
     /**
+     * 标题
+     */
+    private String aArticleTitle;
+    /**
      * 作者
      */
     private String aAuthor;
@@ -111,4 +115,13 @@ public class Article implements Serializable
         this.aContent = aContent;
     }
 
+    public String getAArticleTitle()
+    {
+        return aArticleTitle;
+    }
+
+    public void setAArticleTitle(String aArticleTitle)
+    {
+        this.aArticleTitle = aArticleTitle;
+    }
 }

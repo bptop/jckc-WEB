@@ -29,9 +29,16 @@ window.onload = function () {
 	$.ajax({
 		url: ENV.domain + "/index/articleList",
 		success: function (res) {
-			window.list = res;
+			window.list = JSON.parse(res);
+			console.log(window.list);
+			new Vue({
+				el: '#news',
+				data: {
+					list: window.list,
+				}
+			});
 		}
-	})
+	});
 	// 获取nav高度
 	navTop = $('#nav').offset().top;
 	// 点击nav滚动页面
@@ -74,7 +81,4 @@ window.addEventListener('scroll', function () {
 		$('#news1').css({"margin-top": 8})
 	}
 });
-new Vue({
-	el: '#news1',
-	data: window.list
-});
+

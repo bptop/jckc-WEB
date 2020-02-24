@@ -3,6 +3,7 @@
 <mapper namespace = "cn.bptop.jckc.dao.ArticleDao">
 	<resultMap type = "cn.bptop.jckc.entity.Article" id = "ArticleMap">
 		<result property = "aArticleId" column = "a_article_id" jdbcType = "INTEGER"/>
+		<result property = "aArticleTitle" column = "a_article_title" jdbcType = "VARCHAR"/>
 		<result property = "aAuthor" column = "a_author" jdbcType = "VARCHAR"/>
 		<result property = "aPublishTime" column = "a_publish_time" jdbcType = "VARCHAR"/>
 		<result property = "aPublishDepartment" column = "a_publish_department" jdbcType = "VARCHAR"/>
@@ -13,6 +14,7 @@
 	<!--查询单个-->
 	<select id = "queryById" resultMap = "ArticleMap">
 		select a_article_id,
+		       a_article_title,
 		       a_author,
 		       a_publish_time,
 		       a_publish_department,
@@ -25,6 +27,7 @@
 	<!--查询指定行数据-->
 	<select id = "queryAllByLimit" resultMap = "ArticleMap">
 		select a_article_id,
+		       a_article_title,
 		       a_author,
 		       a_publish_time,
 		       a_publish_department,
@@ -38,11 +41,14 @@
 	<!--通过实体作为筛选条件查询-->
 	<select id = "queryAll" resultMap = "ArticleMap">
 		select
-		a_article_id, a_author, a_publish_time, a_publish_department, user_id, a_classify, a_content
+		a_article_id, a_article_title,a_author, a_publish_time, a_publish_department, user_id, a_classify, a_content
 		from jckc.kc_article
 		<where>
 			<if test = "article.aArticleId != null">
 				and a_article_id = #{article.aArticleId}
+			</if>
+			<if test = "article.aArticleTitle != null and article.aArticleTitle != ''">
+				and a_article_title = #{article.aArticleTitle}
 			</if>
 			<if test = "article.aAuthor != null and article.aAuthor != ''">
 				and a_author = #{article.aAuthor}
@@ -77,6 +83,9 @@
 		<set>
 			<if test = "aAuthor != null and aAuthor != ''">
 				a_author = #{aAuthor},
+			</if>
+			<if test = "article.aArticleTitle != null and article.aArticleTitle != ''">
+				a_article_title = #{article.aArticleTitle}
 			</if>
 			<if test = "aPublishTime != null and aPublishTime != ''">
 				a_publish_time = #{aPublishTime},

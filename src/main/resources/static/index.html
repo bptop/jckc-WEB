@@ -12,15 +12,14 @@
 	<script src = "./dist/js/bootstrap.min.js"></script>
 	<script src = "./dist/js/vue.min.js"></script>
 	<script src = "./dist/js/swiper.min.js"></script>
-	<script src = "./js/index.js"></script>
 	<script src = "https://g.alicdn.com/dingding/dingtalk-jsapi/2.7.13/dingtalk.open.js"></script>
+	<script src = "./js/index.js"></script>
 	
 	<link rel = "stylesheet" href = "./dist/css/bootstrap.min.css" />
 	<link rel = "stylesheet" href = "./dist/css/swiper.min.css" />
-	
 	<link rel = "stylesheet" href = "./css/index.css" />
 	<link rel = "stylesheet" href = "./css/mobile-adapter.css" />
-	<link rel = "stylesheet" href = "./css/reboot.css" />
+	
 	<link rel = "stylesheet" href = "./css/common.css" />
 	<title> 精彩客车</title>
 
@@ -113,135 +112,142 @@
 		<!--        新闻导航   E-->
 		
 		<!--        新闻列表  S-->
-		<div class = "news-main" id = "news1">
-			<div class = "news-top">
-				<div class = "text">车间文件</div>
-				<div class = "more">
-					更多
-				</div>
-			</div>
-			<div class = "news" v-for = "n in 10">
-				<div class = "img" hidden></div>
-				<div class = "new-a">
-					
-					<div class = "title">
-						{{n}}
-					</div>
-					<div class = "body">
-					
-					</div>
-					<div class = "news-suffix">
-						<div class = "author">装调车间装调</div>
-						<div class = "time">02-02 13:03</div>
+		<div id = "news">
+			<div class = "news-main" id = "news1">
+				
+				<div class = "news-top">
+					<div class = "text">车间文件</div>
+					<div class = "more">
+						更多
 					</div>
 				</div>
-			
-			</div>
-		
-		</div>
-		<div class = "news-main" id = "news2">
-			<div class = "news-top">
-				<div class = "text">车间要闻</div>
-				<div class = "more">
-					更多
-				</div>
-			</div>
-			<div class = "news">
-				<div class = "img"></div>
-				<div class = "new-a">
-					<div class = "title">
-						部分元素自适应大小，某个元素填充剩余空间部分元素自适应大小，某个元素填充剩余空间
-					</div>
-					<div class = "body">
-					
-					</div>
-					<div class = "news-suffix">
-						<div class = "author">装调车间装调</div>
-						<div class = "time">02-02 13:03</div>
+				<div class = "news" v-for = " item in  list[0]" v-cloak>
+					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
+					<div class = "new-a">
+						
+						<div class = "title">
+							{{item.article.aarticleTitle}}
+						</div>
+						<div class = "body">
+							{{item.article.acontent}}
+						</div>
+						<div class = "news-suffix">
+							<div class = "author">{{item.article.apublishDepartment}}</div>
+							<div class = "time">{{item.article.apublishTime}}</div>
+						</div>
 					</div>
 				
 				</div>
 			
 			</div>
-		
-		</div>
-		<div class = "news-main" id = "news3">
-			<div class = "news-top">
-				<div class = "text">通知通告</div>
-				<div class = "more">
-					更多
-				</div>
-			</div>
-			<div class = "news">
-				<div class = "img"></div>
-				<div class = "new-a">
-					<div class = "title">
-						部分元素自适应大小，某个元素填充剩余空间
-					</div>
-					<div class = "body">
-					
-					</div>
-					<div class = "news-suffix">
-						<div class = "author">装调车间装调</div>
-						<div class = "time">02-02 13:03</div>
+			<div class = "news-main" id = "news2">
+				<div class = "news-top">
+					<div class = "text">车间要闻</div>
+					<div class = "more">
+						更多
 					</div>
 				</div>
-			
-			</div>
-		
-		</div>
-		<div class = "news-main" id = "news4">
-			<div class = "news-top">
-				<div class = "text">信息简报</div>
-				<div class = "more">
-					更多
-				</div>
-			</div>
-			<div class = "news">
-				<div class = "img"></div>
-				<div class = "new-a">
-					<div class = "title">
-						部分元素自适应大小，某个元素填充剩余空间
+				<div class = "news" v-for = " item in  list[1]" v-cloak>
+					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
+					<div class = "new-a">
+						
+						<div class = "title">
+							{{item.article.aarticleTitle}}
+						</div>
+						<div class = "body">
+							{{item.article.acontent}}
+						</div>
+						<div class = "news-suffix">
+							<div class = "author">{{item.article.apublishDepartment}}</div>
+							<div class = "time">{{item.article.apublishTime}}</div>
+						</div>
 					</div>
-					<div class = "body">
-					
-					</div>
-					<div class = "news-suffix">
-						<div class = "author">装调车间装调</div>
-						<div class = "time">02-02 13:03</div>
-					</div>
+				
 				</div>
 			
 			</div>
-		
-		</div>
-		<div class = "news-main" id = "news5">
-			<div class = "news-top">
-				<div class = "text">热点新闻</div>
-				<div class = "more">
-					更多
+			<div class = "news-main" id = "news3">
+				<div class = "news-top">
+					<div class = "text">通知通告</div>
+					<div class = "more">
+						更多
+					</div>
 				</div>
-			</div>
-			<div class = "news">
-				<div class = "img"></div>
-				<div class = "new-a">
-					<div class = "title">
-						部分元素自适应大小，某个元素填充剩余空间
+				<div class = "news" v-for = " item in  list[2]" v-cloak>
+					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
+					<div class = "new-a">
+						
+						<div class = "title">
+							{{item.article.aarticleTitle}}
+						</div>
+						<div class = "body">
+							{{item.article.acontent}}
+						</div>
+						<div class = "news-suffix">
+							<div class = "author">{{item.article.apublishDepartment}}</div>
+							<div class = "time">{{item.article.apublishTime}}</div>
+						</div>
 					</div>
-					<div class = "body">
-					
-					</div>
-					<div class = "news-suffix">
-						<div class = "author">装调车间装调</div>
-						<div class = "time">02-02 13:03</div>
-					</div>
+				
 				</div>
 			
 			</div>
-		
+			<div class = "news-main" id = "news4">
+				<div class = "news-top">
+					<div class = "text">信息简报</div>
+					<div class = "more">
+						更多
+					</div>
+				</div>
+				<div class = "news" v-for = " item in  list[3]" v-cloak>
+					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
+					<div class = "new-a">
+						
+						<div class = "title">
+							{{item.article.aarticleTitle}}
+						</div>
+						<div class = "body">
+							{{item.article.acontent}}
+						</div>
+						<div class = "news-suffix">
+							<div class = "author">{{item.article.apublishDepartment}}</div>
+							<div class = "time">{{item.article.apublishTime}}</div>
+						</div>
+					</div>
+				
+				</div>
+			
+			</div>
+			<div class = "news-main" id = "news5">
+				<div class = "news-top">
+					<div class = "text">热点新闻</div>
+					<div class = "more">
+						更多
+					</div>
+				</div>
+				<div class = "news" v-for = " item in  list[4]" v-cloak>
+					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
+					
+					<div class = "new-a">
+						
+						<div class = "title">
+							{{item.article.aarticleTitle}}
+						</div>
+						<div class = "body">
+							{{item.article.acontent}}
+						</div>
+						<div class = "news-suffix">
+							<div class = "author">{{item.article.apublishDepartment}}</div>
+							<div class = "time">{{item.article.apublishTime}}</div>
+						</div>
+					</div>
+				
+				</div>
+			
+			</div>
+			
+			<!--        新闻列表   E-->
 		</div>
-		
-		<!--        新闻列表   E-->
 	</div>
 	<!--page  E-->
 	<!--swiper 轮播图配置-->

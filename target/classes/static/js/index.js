@@ -14,11 +14,9 @@ window.onload = function () {
 						code: result.code,
 					},
 					success: function (result) {
-						if (localStorage!==JSON.stringify(JSON.parse(result).kcUser))
-						{
+						if (localStorage !== JSON.stringify(JSON.parse(result).kcUser)) {
 							localStorage.user = JSON.stringify(JSON.parse(result).kcUser);
 						}
-						
 					}
 				});
 			},
@@ -27,15 +25,21 @@ window.onload = function () {
 			}
 		});
 	});
-	
 	//加载首页新闻
 	$.ajax({
-		url	:ENV.domain + "/index/articleList",
-		success:function (res) {
-		window.list=res;
+		url: ENV.domain + "/index/articleList",
+		success: function (res) {
+			
+			window.list = JSON.parse(res);
+			console.log(window.list);
+			new Vue({
+				el: '#news',
+				data:{
+					list:window.list,
+				}
+			});
 		}
-	})
-	
+	});
 	// 获取nav高度
 	navTop = $('#nav').offset().top;
 	// 点击nav滚动页面
@@ -79,8 +83,3 @@ window.addEventListener('scroll', function () {
 	}
 });
 
-
-new Vue({
-	el: '#news1',
-	data: window.list
-});

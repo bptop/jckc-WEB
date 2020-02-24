@@ -182,8 +182,9 @@
 
 .news-top .more {
     display: inline-block;
-    position: absolute;
-    right: 1.6rem;
+    /*position: absolute;*/
+    /*right: 1.6rem;*/
+    float: right;
     font-size: 1.2rem;
     font-weight: 300;
     color: #999999;
@@ -215,6 +216,8 @@
     height: 6.5rem;
     width: 30%;
     background-color: #9fcdff;
+
+
 }
 
 .news .new-a {
@@ -223,7 +226,7 @@
     justify-content: space-between;
     min-height: 100%;
     flex: 3;
-    padding-left: 0.5rem;
+    padding: 0 0.5rem;
     vertical-align: bottom;
 }
 
@@ -256,10 +259,11 @@
 .news .time {
     display: -webkit-flex; /* Safari */
     display: flex;
-    width: 5rem;
+    /*width: 5rem;*/
     font-size: 0.8rem;
     color: #6c757d;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    float: right;
 }
