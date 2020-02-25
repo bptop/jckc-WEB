@@ -29,13 +29,12 @@ window.onload = function () {
 	$.ajax({
 		url: ENV.domain + "/index/articleList",
 		success: function (res) {
-			
 			window.list = JSON.parse(res);
 			console.log(window.list);
 			new Vue({
 				el: '#news',
-				data:{
-					list:window.list,
+				data: {
+					list: window.list,
 				}
 			});
 		}
