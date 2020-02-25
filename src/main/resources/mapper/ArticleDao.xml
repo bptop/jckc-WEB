@@ -70,7 +70,6 @@
 			</if>
 		</where>
 		ORDER BY str_to_date(a_publish_time, '%Y-%m-%d')
-		limit #{offset}, #{limit}
 	</select>
 	<!--新增所有列-->
 	<insert id = "insert" keyProperty = "aArticleId" useGeneratedKeys = "true">

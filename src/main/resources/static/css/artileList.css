@@ -1,0 +1,120 @@
+.header {
+    height: 3rem;
+    width: 100%;
+    background-color: #C21F24;
+}
+
+.back-index {
+    height: inherit;
+
+    display: inline-block;
+    float: left;
+    margin: 0 0.5rem;
+
+
+}
+
+.back-index .icon {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    background: url("../img/left.png") no-repeat center/cover;
+}
+
+.back-index .text {
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    color: white;
+    vertical-align: bottom;
+}
+
+.head-title {
+
+    display: inline-block;
+    color: white;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    padding-left: 0.5rem;
+    border-left: #ee2754 solid 1px;
+}
+
+.news-list {
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: white;
+}
+
+.news {
+    display: flex;
+
+    padding: 0.5rem 0;
+    margin: 0 1rem;
+    font-size: 0;
+    border-bottom: #dddddd solid 0.05rem;
+}
+
+.news .img {
+    flex: 2;
+    display: inline-block;
+    height: 6.5rem;
+    width: 30%;
+    background-color: #9fcdff;
+}
+
+.news .new-a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    flex: 3;
+    padding: 0 0.5rem;
+    vertical-align: bottom;
+}
+
+.news .title {
+    align-items: center;
+    width: 100%;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #1b1e21;
+
+}
+
+.news .news-suffix {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.news .author {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    width: 6rem;
+    font-size: 0.8rem;
+    color: #6c757d;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.news .time {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    /*width: 5rem;*/
+    font-size: 0.8rem;
+    color: #6c757d;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    float: right;
+}
+
+.nav {
+    width: 100%;
+    background-color: white;
+}
+
+.pagination {
+    margin: 0.5rem auto;
+}

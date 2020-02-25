@@ -41,7 +41,7 @@ public interface ArticleDao
      * @param article 实例对象
      * @return 对象列表
      */
-    List<Article> queryAll(@Param("article") Article article, @Param("offset") int offset, @Param("limit") int limit);
+    List<Article> queryAll(@Param("article") Article article);
 
     /**
      * 新增数据

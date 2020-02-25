@@ -18,6 +18,75 @@
 
 </head>
 <body>
+<div class = "page">
+	<!--	page S-->
+	<div class = "content">
+		<!--	head  S-->
+		<div class = "header">
+			<div class = "back-index">
+				<a href = "/">
+					<div class = "icon"></div>
+					<div class = "text">首页</div>
+				
+				</a>
+			
+			</div>
+			<div class = "head-title">
+				车间文件
+			</div>
+		</div>
+		<!--	head  E-->
+		<div class = "news-list">
+			
+			<div class = "news" v-for = " item in  list[0]">
+				<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
+				<div class = "new-a">
+					
+					<div class = "title">
+						{{item.article.aarticleTitle}}
+					</div>
+					<div class = "body">
+						{{item.article.acontent}}
+					</div>
+					<div class = "news-suffix">
+						<div class = "author">{{item.article.apublishDepartment}}</div>
+						<div class = "time">{{item.article.apublishTime}}</div>
+					</div>
+				</div>
+			
+			</div>
+		
+		</div>
+		<nav class = "nav" aria-label = "...">
+			<ul class = "pagination">
+				<li class = "page-item disabled">
+					<a class = "page-link" href = "#" tabindex = "-1" aria-disabled = "true">&lt;&lt;</a>
+				</li>
+				<li class = "page-item">
+					<a class = "page-link" href = "#">1</a>
+				</li>
+				<li class = "page-item active" aria-current = "page">
+					<a class = "page-link" href = "#">2 <span class = "sr-only">(current)</span></a>
+				</li>
+				<li class = "page-item">
+					<a class = "page-link" href = "#">3</a>
+				</li>
+				<li class = "page-item">
+					<a class = "page-link" href = "#">4</a>
+				</li>
+				<li class = "page-item">
+					<a class = "page-link" href = "#">5</a>
+				</li>
+				<li class = "page-item">
+					<a class = "page-link" href = "#"> &gt;&gt; </a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+</div>
+
+</div>
 
 </body>
 </html>

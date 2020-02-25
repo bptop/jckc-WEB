@@ -4,6 +4,8 @@ import cn.bptop.jckc.dao.ArticleDao;
 import cn.bptop.jckc.dao.FileDao;
 import cn.bptop.jckc.entity.Article;
 import cn.bptop.jckc.entity.File;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,11 +27,12 @@ public class ArticleService
      * @return: 返回文章list
      * @time: 2020/2/23 11:23
      */
-    public List<Article> queryAllbyType(String type, int offset, int limit)
+    public List queryAllbyType(String type, int pageNum, int pageSize)
     {
+        PageHelper.startPage(pageNum, pageSize);
         Article article = new Article();
         article.setAClassify(type);
-        return articleDao.queryAll(article, offset, limit);
+        return new PageInfo(articleDao.queryAll(article)).getList();
     }
 
     /**

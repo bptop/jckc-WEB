@@ -17,3 +17,14 @@ body {
 [v-cloak] {
     display: none !important;
 }
+
+
+.page {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.content {
+    padding-bottom: .1px;
+    background-color: #f6f7f9;
+}

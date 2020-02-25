@@ -18,7 +18,11 @@ logging:
   level:
     cn.bptop.jckc.dao: debug
 
-
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 
 
 server:
