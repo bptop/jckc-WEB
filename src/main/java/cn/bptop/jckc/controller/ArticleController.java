@@ -18,6 +18,13 @@ public class ArticleController
     @RequestMapping("/articleList")
     public String articleList(String type, int pageNum, int pageSize)
     {
-        return Json.toJson(articleService.queryAllbyType(type, pageNum, pageSize));
+        return Json.toJson(articleService.wipeContent(articleService.queryAllbyType(type, pageNum, pageSize)));
+    }
+
+    @ResponseBody
+    @RequestMapping("/size")
+    public String size(String type)
+    {
+        return Json.toJson(articleService.queryCount(type));
     }
 }

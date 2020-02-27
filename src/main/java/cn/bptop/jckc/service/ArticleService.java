@@ -23,6 +23,8 @@ public class ArticleService
     FileDao fileDao;
 
     /**
+     * 通过文章类型查询文章实体
+     *
      * @param type 文章类型
      * @return: 返回文章list
      * @time: 2020/2/23 11:23
@@ -33,6 +35,20 @@ public class ArticleService
         Article article = new Article();
         article.setAClassify(type);
         return new PageInfo(articleDao.queryAll(article)).getList();
+    }
+
+    /**
+     * 通过文章类型查询文章总数
+     *
+     * @param type 文章类型
+     * @return: 返回文章总数
+     * @time: 2020/2/27 19:23
+     */
+    public int queryCount(String type)
+    {
+        Article article = new Article();
+        article.setAClassify(type);
+        return articleDao.queryCount(article);
     }
 
     /**

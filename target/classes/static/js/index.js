@@ -1,9 +1,21 @@
 document.write("<script src='./js/profile.js'></script>");
 var navTop;
-
 window.onload = function () {
-
-	// 钉钉免登
+	//获取首页新闻
+	$.ajax({
+		url: ENV.domain + "/index/articleList",
+		success: function (res) {
+			window.list = JSON.parse(res);
+			// vue实例化
+			new Vue({
+				el: '#news',
+				data: {
+					list: window.list,
+				},
+			});
+		}
+	});
+// 钉钉免登
 	dd.ready(function () {
 		dd.runtime.permission.requestAuthCode({
 			corpId: "ding23a973f9601037ef35c2f4657eb6378f", // 企业id
@@ -24,20 +36,6 @@ window.onload = function () {
 				alert(err)
 			}
 		});
-	});
-	//加载首页新闻
-	$.ajax({
-		url: ENV.domain + "/index/articleList",
-		success: function (res) {
-			window.list = JSON.parse(res);
-			console.log(window.list);
-			new Vue({
-				el: '#news',
-				data: {
-					list: window.list,
-				}
-			});
-		}
 	});
 	// 获取nav高度
 	navTop = $('#nav').offset().top;
@@ -81,4 +79,8 @@ window.addEventListener('scroll', function () {
 		$('#news1').css({"margin-top": 8})
 	}
 });
+
+function toList(res) {
+	window.location.replace(ENV.domain + '/html/articleList.html?type=' + res.target.dataset.text);
+}
 

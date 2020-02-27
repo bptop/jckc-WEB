@@ -18,6 +18,9 @@ body {
     display: none !important;
 }
 
+a {
+    text-decoration: none;
+}
 
 .page {
     box-sizing: border-box;

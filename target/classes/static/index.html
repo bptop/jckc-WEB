@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
 	<meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1">
-	
 	<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
-	
 	<meta name = "viewport" content = "width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=no">
 	
 	<script src = "./dist/js/jquery-3.4.1.min.js"></script>
-<!--	<script src = "./dist/js/bootstrap.min.js"></script>-->
+	<!--	<script src = "./dist/js/bootstrap.min.js"></script>-->
 	<script src = "./dist/js/vue.min.js"></script>
 	<script src = "./dist/js/swiper.min.js"></script>
 	<script src = "https://g.alicdn.com/dingding/dingtalk-jsapi/2.7.13/dingtalk.open.js"></script>
 	<script src = "./js/index.js"></script>
 	
-<!--	<link rel = "stylesheet" href = "./dist/css/bootstrap.min.css" />-->
+	<!--	<link rel = "stylesheet" href = "./dist/css/bootstrap.min.css" />-->
 	<link rel = "stylesheet" href = "./dist/css/swiper.min.css" />
 	<link rel = "stylesheet" href = "./css/index.css" />
 	<link rel = "stylesheet" href = "./css/mobile-adapter.css" />
@@ -117,11 +114,11 @@
 				
 				<div class = "news-top">
 					<div class = "text">车间文件</div>
-					<div class = "more">
+					<div class = "more" data-text = "车间文件" @click = "toList">
 						更多
 					</div>
 				</div>
-				<div class = "news" v-for = " item in  list[0]" v-cloak>
+				<div class = "news" v-if = "list" v-for = " item in  list[0]" v-cloak>
 					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
 					<div class = "new-a">
 						
@@ -143,7 +140,7 @@
 			<div class = "news-main" id = "news2">
 				<div class = "news-top">
 					<div class = "text">车间要闻</div>
-					<div class = "more">
+					<div class = "more" data-text = "车间要闻" @click = "toList">
 						更多
 					</div>
 				</div>
@@ -169,7 +166,7 @@
 			<div class = "news-main" id = "news3">
 				<div class = "news-top">
 					<div class = "text">通知通告</div>
-					<div class = "more">
+					<div class = "more" data-text = "通知通告" @click = "toList">
 						更多
 					</div>
 				</div>
@@ -195,7 +192,7 @@
 			<div class = "news-main" id = "news4">
 				<div class = "news-top">
 					<div class = "text">信息简报</div>
-					<div class = "more">
+					<div class = "more" data-text = "信息简报" @click = "toList">
 						更多
 					</div>
 				</div>
@@ -221,7 +218,7 @@
 			<div class = "news-main" id = "news5">
 				<div class = "news-top">
 					<div class = "text">热点新闻</div>
-					<div class = "more">
+					<div class = "more" data-text = "热点新闻" @click = "toList">
 						更多
 					</div>
 				</div>

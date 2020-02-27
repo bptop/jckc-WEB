@@ -44,6 +44,14 @@ public interface ArticleDao
     List<Article> queryAll(@Param("article") Article article);
 
     /**
+     * 通过实体作为筛选条件查询count
+     *
+     * @param article 实例对象
+     * @return 对象列表
+     */
+    int queryCount(@Param("article") Article article);
+
+    /**
      * 新增数据
      *
      * @param article 实例对象

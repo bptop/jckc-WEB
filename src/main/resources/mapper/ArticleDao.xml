@@ -71,6 +71,36 @@
 		</where>
 		ORDER BY str_to_date(a_publish_time, '%Y-%m-%d')
 	</select>
+	<select id = "queryCount" resultType = "int">
+		select count(*)
+		from kc_article
+		<where>
+			<if test = "article.aArticleId != null">
+				and a_article_id = #{article.aArticleId}
+			</if>
+			<if test = "article.aArticleTitle != null and article.aArticleTitle != ''">
+				and a_article_title = #{article.aArticleTitle}
+			</if>
+			<if test = "article.aAuthor != null and article.aAuthor != ''">
+				and a_author = #{article.aAuthor}
+			</if>
+			<if test = "article.aPublishTime != null and article.aPublishTime != ''">
+				and a_publish_time = #{article.aPublishTime}
+			</if>
+			<if test = "article.aPublishDepartment != null and article.aPublishDepartment != ''">
+				and a_publish_department = #{article.aPublishDepartment}
+			</if>
+			<if test = "article.userId != null">
+				and user_id = #{userId}
+			</if>
+			<if test = "article.aClassify != null and article.aClassify != ''">
+				and a_classify = #{article.aClassify}
+			</if>
+			<if test = "article.aContent != null and article.aContent != ''">
+				and a_content = #{article.aContent}
+			</if>
+		</where>
+	</select>
 	<!--新增所有列-->
 	<insert id = "insert" keyProperty = "aArticleId" useGeneratedKeys = "true">
 		insert into jckc.kc_article(a_author, a_publish_time, a_publish_department, user_id, a_classify, a_content)
@@ -83,8 +113,8 @@
 			<if test = "aAuthor != null and aAuthor != ''">
 				a_author = #{aAuthor},
 			</if>
-			<if test = "article.aArticleTitle != null and article.aArticleTitle != ''">
-				a_article_title = #{article.aArticleTitle}
+			<if test = "aArticleTitle != null and aArticleTitle != ''">
+				a_article_title = #{aArticleTitle}
 			</if>
 			<if test = "aPublishTime != null and aPublishTime != ''">
 				a_publish_time = #{aPublishTime},
