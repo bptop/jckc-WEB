@@ -84,7 +84,3 @@ function toList(res) {
 	window.location.replace(ENV.domain + '/html/articleList.html?type=' + res.target.dataset.text);
 }
 
-function toArticle(res) {
-	window.location.replace(ENV.domain + '/html/article.html?id=' + res);
-}
-

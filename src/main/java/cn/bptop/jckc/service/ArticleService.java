@@ -73,16 +73,4 @@ public class ArticleService
         }
         return list;
     }
-
-    /**
-     * 通过id查文章实体
-     *
-     * @param id 文章ID
-     * @return:
-     * @time: 2020/2/28 11:11
-     */
-    public Article queryById(int id)
-    {
-        return articleDao.queryById(id);
-    }
 }

@@ -5,15 +5,15 @@
 	<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
 	<meta name = "viewport" content = "width=device-width, initial-scale=1.0 ,maximum-scale=1.0, user-scalable=no">
 	
-	<script src = "plugin/jquery/jquery-3.4.1.min.js"></script>
+	<script src = "./dist/js/jquery-3.4.1.min.js"></script>
 	<!--	<script src = "./dist/js/bootstrap.min.js"></script>-->
-	<script src = "plugin/vue/vue.min.js"></script>
-	<script src = "plugin/swiper/swiper.min.js"></script>
+	<script src = "./dist/js/vue.min.js"></script>
+	<script src = "./dist/js/swiper.min.js"></script>
 	<script src = "https://g.alicdn.com/dingding/dingtalk-jsapi/2.7.13/dingtalk.open.js"></script>
 	<script src = "./js/index.js"></script>
 	
 	<!--	<link rel = "stylesheet" href = "./dist/css/bootstrap.min.css" />-->
-	<link rel = "stylesheet" href = "plugin/swiper/swiper.min.css" />
+	<link rel = "stylesheet" href = "./dist/css/swiper.min.css" />
 	<link rel = "stylesheet" href = "./css/index.css" />
 	<link rel = "stylesheet" href = "./css/mobile-adapter.css" />
 	
@@ -118,7 +118,7 @@
 						更多
 					</div>
 				</div>
-				<div class = "news" v-if = "list" v-for = " item in  list[0]"  @click = "toArticle(item.article.aarticleId)" v-cloak>
+				<div class = "news" v-if = "list" v-for = " item in  list[0]" v-cloak>
 					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
 					<div class = "new-a">
 						
@@ -144,7 +144,7 @@
 						更多
 					</div>
 				</div>
-				<div class = "news" v-for = " item in  list[1]" @click = "toArticle(item.article.aarticleId)"  v-cloak>
+				<div class = "news" v-for = " item in  list[1]" v-cloak>
 					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
 					<div class = "new-a">
 						
@@ -170,23 +170,21 @@
 						更多
 					</div>
 				</div>
-				<div class = "news" v-for = " item in  list[2]"  @click = "toArticle(item.article.aarticleId)" v-cloak>
-					
-						<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
-						<div class = "new-a">
-							
-							<div class = "title">
-								{{item.article.aarticleTitle}}
-							</div>
-							<div class = "body">
-								{{item.article.acontent}}
-							</div>
-							<div class = "news-suffix">
-								<div class = "author">{{item.article.apublishDepartment}}</div>
-								<div class = "time">{{item.article.apublishTime}}</div>
-							</div>
+				<div class = "news" v-for = " item in  list[2]" v-cloak>
+					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
+					<div class = "new-a">
+						
+						<div class = "title">
+							{{item.article.aarticleTitle}}
 						</div>
-				
+						<div class = "body">
+							{{item.article.acontent}}
+						</div>
+						<div class = "news-suffix">
+							<div class = "author">{{item.article.apublishDepartment}}</div>
+							<div class = "time">{{item.article.apublishTime}}</div>
+						</div>
+					</div>
 				
 				</div>
 			
@@ -198,7 +196,7 @@
 						更多
 					</div>
 				</div>
-				<div class = "news" v-for = " item in  list[3]" @click = "toArticle(item.article.aarticleId)"  v-cloak>
+				<div class = "news" v-for = " item in  list[3]" v-cloak>
 					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
 					<div class = "new-a">
 						
@@ -224,7 +222,7 @@
 						更多
 					</div>
 				</div>
-				<div class = "news" v-for = " item in  list[4]" @click = "toArticle(item.article.aarticleId)"  v-cloak>
+				<div class = "news" v-for = " item in  list[4]" v-cloak>
 					<div class = "img" v-if = "item.img[0]" :style = "{ background: 'url('+item.img[0].faddress+') no-repeat  center/cover' }"></div>
 					
 					<div class = "new-a">

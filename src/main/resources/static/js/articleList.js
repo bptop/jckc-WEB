@@ -47,7 +47,3 @@ function getList(type, pageNum, pageSize) {
 };
 $(function () {
 })
-
-function toArticle(res) {
-	window.location.replace(ENV.domain + '/html/article.html?id=' + res);
-}
