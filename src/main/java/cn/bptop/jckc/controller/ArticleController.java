@@ -27,4 +27,11 @@ public class ArticleController
     {
         return Json.toJson(articleService.queryCount(type));
     }
+
+    @ResponseBody
+    @RequestMapping("/article")
+    public String article(String id)
+    {
+        return Json.toJson(articleService.queryById(Integer.parseInt(id)));
+    }
 }
